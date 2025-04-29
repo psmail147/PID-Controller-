@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PID_Control_Optimize", "PID_Control_Optimize.pyproj", "{788F7421-7019-4E72-9D59-6DB3259D2922}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{788F7421-7019-4E72-9D59-6DB3259D2922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{788F7421-7019-4E72-9D59-6DB3259D2922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D681807-6FB3-4528-9E2F-55CE3C08C340}
+	EndGlobalSection
+EndGlobal
