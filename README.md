@@ -5,28 +5,29 @@ It provides both a **classical PID** and a **fractional-order PID (FOPID)** cont
 
 ---
 
-## 🧠 Theoretical Background
+## Theoretical Background
 
 The control law of a standard PID controller is governed by the **differential equation**:
 
-\[
-u(t) = K_p e(t) + K_i \int_0^t e(\tau)\,d\tau + K_d \frac{de(t)}{dt}
-\]
+<p align="center">
+  <b>u(t) = K<sub>p</sub> e(t) + K<sub>i</sub> ∫₀ᵗ e(τ) dτ + K<sub>d</sub> (de(t)/dt)</b>
+</p>
 
 where  
-- \(u(t)\) is the control signal,  
-- \(e(t)\) is the instantaneous error,  
-- \(K_p, K_i, K_d\) are the proportional, integral, and derivative gains.  
+- **u(t)** is the control signal,  
+- **e(t)** is the instantaneous error,  
+- **K<sub>p</sub>**, **K<sub>i</sub>**, and **K<sub>d</sub>** are the proportional, integral, and derivative gains.  
 
-This project discretises the above equation for real-time control within a simulation environment. The controller continuously updates the control output based on sampled error values and elapsed time between iterations.
+This continuous-time control law is discretised in the implementation for simulation in CoppeliaSim, allowing the controller to operate on sampled sensor data in real time.  
 
-The **fractional-order PID (FOPID)** extends this principle using **fractional calculus**, replacing integer-order integration and differentiation with non-integer orders \( \lambda \) and \( \mu \):
+The **fractional-order PID (FOPID)** extends the standard model using **fractional calculus**, replacing integer-order differentiation and integration with real-valued orders λ and μ:
 
-\[
-u(t) = K_p e(t) + K_i D_t^{-\lambda} e(t) + K_d D_t^{\mu} e(t)
-\]
+<p align="center">
+  <b>u(t) = K<sub>p</sub> e(t) + K<sub>i</sub> D<sup>-λ</sup> e(t) + K<sub>d</sub> D<sup>μ</sup> e(t)</b>
+</p>
 
-These fractional derivatives are approximated numerically using the **Grünwald–Letnikov** method, implemented in the file `pid_controller.py`.
+These fractional operators are approximated numerically using the **Grünwald–Letnikov method**, implemented in `pid_controller.py`.
+
 
 ---
 
@@ -52,7 +53,7 @@ These fractional derivatives are approximated numerically using the **Grünwald�
 
 - Classical and fractional-order PID controllers  
 - Discrete-time implementation of continuous differential equations  
-- Tunable parameters for \(K_p\), \(K_i\), \(K_d\), \(λ\), and \(μ\)  
+- Tunable parameters for K<sub>p</sub>, K<sub>i</sub>, K<sub>d</sub>, λ, and μ
 - Modular structure for easy integration with robotic simulation environments  
 - Example configuration for **CoppeliaSim Pioneer P3-DX** robot
 
@@ -72,9 +73,3 @@ These fractional derivatives are approximated numerically using the **Grünwald�
 - `math`
 - `collections`
 - `CoppeliaSim Remote API` (for communication with the simulator)
-
----
-
-*Author: Philip Smith*  
-*Email: psmail147@gmail.com*  
-*GitHub: [psmail147](https://github.com/psmail147)*
